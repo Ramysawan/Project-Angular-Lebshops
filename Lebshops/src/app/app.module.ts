@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -18,6 +19,29 @@ import { BooksComponent } from './components/books/books.component';
 import { BeautyComponent } from './components/beauty/beauty.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent},
+  { path: 'contact', component: ContactComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'electronics', component: ElectronicsComponent },
+  { path: 'fashion', component: FashionComponent },
+  { path: 'kitchen', component: KitchenComponent },
+  { path: 'books', component: BooksComponent },
+  { path: 'jewellery', component: JewelleryComponent },
+  { path: 'success', component: SuccessComponent },
+  { path: 'buynow', component: BuynowComponent },
+  { path: 'sports', component: SportsComponent },
+  { path: 'beauty', component: BeautyComponent },
+  { path: 'liquors', component: LiquorsComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full'}
+
+];
+
+
+
 
 @NgModule({
   declarations: [
@@ -40,7 +64,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
